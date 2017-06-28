@@ -1,7 +1,7 @@
 const yargs = require('yargs');
 const axios = require('axios');
 
-const config = require('./config');
+const secret_keys = require('./secret_keys/secret_keys');
 
 const argv = yargs
   .options({
@@ -18,8 +18,7 @@ const argv = yargs
 
 var encodedAddress = encodeURIComponent(argv.address);
 var goecodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}`;
-var key = config.forecastAPIKey;
-
+var key = secret_keys.getSecretKey();
 
 axios.get(goecodeUrl).then((response) => {
   if(response.data.status === 'ZERO_RESULTS') {

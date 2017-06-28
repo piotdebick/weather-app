@@ -1,8 +1,8 @@
 const request = require('request');
 
-const config = require('./config');
+const secret_keys = require('../secret_keys/secret_keys');
 
-var key = config.forecastAPIKey;
+var key = secret_keys.getSecretKey();
 
 var getWeather = (lat, lng, callback) => {
   request({
