@@ -18,6 +18,7 @@ const argv = yargs
 
 var encodedAddress = encodeURIComponent(argv.address);
 var goecodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}`;
+/************ YOUR API KEY HERE ***************/
 var key = secret_keys.getSecretKey();
 
 axios.get(goecodeUrl).then((response) => {

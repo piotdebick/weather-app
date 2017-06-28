@@ -1,7 +1,7 @@
 const request = require('request');
 
 const secret_keys = require('../secret_keys/secret_keys');
-
+/************ YOUR API KEY HERE ***************/
 var key = secret_keys.getSecretKey();
 
 var getWeather = (lat, lng, callback) => {
